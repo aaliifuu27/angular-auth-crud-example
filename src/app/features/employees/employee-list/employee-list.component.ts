@@ -43,6 +43,10 @@ export class EmployeeListComponent implements OnInit, AfterViewInit {
     this.router.navigate(['/employees/add']);
   }
 
+  edit(id:string) {
+    this.router.navigate(['/employees/edit/',id]);
+  }
+
   filter(event: any) {
     this.dataSource.filter = event.target.value.trim().toLocaleLowerCase();
   }

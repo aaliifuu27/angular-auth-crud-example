@@ -1,1 +1,114 @@
-<p>employee-add-edit works!</p>
+<div class="container" fxLayout="row" fxLayoutAlign="center none">
+  <div fxFlex="95%" fxLayoutAlign="center center">
+    <form [formGroup]="employeeForm" fxFlex="100%" fxFlex.sm="50%" fxFlex.xs="90%">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>{{ isAddMode ? "Add" : "Edit" }} Employees</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>First Name</mat-label>
+            <input id="firstNameInput" matInput placeholder="First Name" formControlName="firstName" type="text"
+              autocomplete="current-firstName">
+            <mat-error id="requiredfirstNameError" *ngIf="employeeForm.controls['firstName'].hasError('required')">
+              First Name is
+              <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Last Name</mat-label>
+            <input id="lastNameInput" matInput placeholder="Last Name" formControlName="lastName" type="text"
+              autocomplete="current-lastName">
+            <mat-error id="requiredlastNameError" *ngIf="employeeForm.controls['lastName'].hasError('required')">
+              Last Name is
+              <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Username</mat-label>
+            <input id="usernameInput" matInput placeholder="Username" formControlName="username" type="text"
+              autocomplete="current-username">
+            <mat-error id="requiredusernameError" *ngIf="employeeForm.controls['username'].hasError('required')">
+              Username is
+              <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Email</mat-label>
+            <input id="emailInput" matInput placeholder="Email" formControlName="email" type="email">
+            <mat-error id="invalidEmailError" *ngIf="employeeForm.controls['email'].hasError('email')">
+              Please enter a valid email address
+            </mat-error>
+            <mat-error id="requiredEmailError" *ngIf="employeeForm.controls['email'].hasError('required')">
+              Email is
+              <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Birth Date</mat-label>
+            <input matInput [max]="maxDate" [matDatepicker]="picker" placeholder="Birth Date"
+              formControlName="birthDate">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker touchUi #picker></mat-datepicker>
+            <mat-error id="requiredbirthDateError" *ngIf="employeeForm.controls['birthDate'].hasError('required')">
+              Birth Date is
+              <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Basic Salary</mat-label>
+            <input id="basicSalaryInput" matInput placeholder="Basic Salary" formControlName="basicSalary" min="100"
+              type="number" autocomplete="current-basicSalary">
+            <mat-error id="requiredbasicSalaryError" *ngIf="employeeForm.controls['basicSalary'].hasError('required')">
+              Basic Salary is
+              <strong>required</strong>
+            </mat-error>
+            <mat-error id="requiredbasicSalaryErrorMax" *ngIf="employeeForm.controls['basicSalary'].hasError('min')">
+              Basic Salary min
+              <strong>100</strong>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Group</mat-label>
+            <input type="text" matInput formControlName="group" placeholder="Group" [matAutocomplete]="auto">
+            <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+              <mat-option *ngFor="let option of groupOptions | async" [value]="option">
+                {{option.name}}
+              </mat-option>
+            </mat-autocomplete>
+
+            <mat-error id="requiredgroupError" *ngIf="employeeForm.controls['group'].hasError('required')">
+              Group is
+              <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+          
+
+          <mat-radio-group formControlName="status">
+            <mat-label>Status</mat-label>
+            <mat-radio-button class="example-margin" value="active">
+              Active
+            </mat-radio-button>
+            <mat-radio-button class="example-margin" value="inactive">
+              Inactive
+            </mat-radio-button>
+          </mat-radio-group>
+          
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Description</mat-label>
+            <input id="descriptionInput" matInput placeholder="Description" formControlName="description" type="text"
+              autocomplete="current-description">
+            <mat-error id="requireddescriptionError" *ngIf="employeeForm.controls['description'].hasError('required')">
+              Description is
+              <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+          <button mat-raised-button style="margin-right: 10px;" id="login" color="primary"
+            [disabled]="employeeForm.invalid || loading" (click)="store()">{{ isAddMode ? "Save" : "Update" }}</button>
+          <button mat-raised-button id="back" color="success" (click)="back()">Back</button>
+        </mat-card-content>
+      </mat-card>
+    </form>
+  </div>
+</div>

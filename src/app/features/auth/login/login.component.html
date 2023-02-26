@@ -7,6 +7,7 @@
       </mat-card-header>
       <mat-card-content>
         <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Email</mat-label>
           <input id="emailInput" matInput placeholder="Email" formControlName="email" autocomplete="email" type="email">
           <mat-error id="invalidEmailError" *ngIf="loginForm.controls['email'].hasError('email')">
             Please enter a valid email address
@@ -17,9 +18,10 @@
           </mat-error>
         </mat-form-field>
         <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Password</mat-label>
           <input id="passwordInput" matInput placeholder="Password" formControlName="password" type="password"
             autocomplete="current-password">
-          <mat-error id="requiredPasswordError" *ngIf="loginForm.controls['email'].hasError('required')">
+          <mat-error id="requiredPasswordError" *ngIf="loginForm.controls['password'].hasError('required')">
             Password is
             <strong>required</strong>
           </mat-error>

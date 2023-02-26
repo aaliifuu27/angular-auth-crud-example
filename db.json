@@ -8,8 +8,41 @@
       "id": 1
     }
   ],
+  "groups": [
+    {
+      "name": "Sales",
+    },
+    {
+      "name": "Marketing",
+    },
+    {
+      "name": "Finance",
+    },
+    {
+      "name": "Engineering",
+    },
+    {
+      "name": "Human Resources",
+    },
+    {
+      "name": "Research and Development",
+    },
+    {
+      "name": "Operations",
+    },
+    {
+      "name": "Customer Support",
+    },
+    {
+      "name": "Product Management",
+    },
+    {
+      "name": "Information Technology",
+    }
+  ],
   "employees": [
     {
+      "id": "1",
       "username": "user1",
       "firstName": "John",
       "lastName": "Doe",
@@ -21,6 +54,7 @@
       "description": "Senior sales representative"
     },
     {
+      "id": "2",
       "username": "user2",
       "firstName": "Jane",
       "lastName": "Smith",
@@ -32,6 +66,7 @@
       "description": "Marketing manager"
     },
     {
+      "id": "3",
       "username": "user3",
       "firstName": "David",
       "lastName": "Johnson",
@@ -43,6 +78,7 @@
       "description": "Software engineer"
     },
     {
+      "id": "4",
       "username": "user4",
       "firstName": "Emily",
       "lastName": "Wilson",
@@ -54,6 +90,7 @@
       "description": "HR manager"
     },
     {
+      "id": "5",
       "username": "user5",
       "firstName": "Alice",
       "lastName": "Smith",
@@ -65,6 +102,7 @@
       "description": "Senior Sales Manager"
     },
     {
+      "id": "6",
       "username": "user6",
       "firstName": "Bob",
       "lastName": "Johnson",
@@ -76,6 +114,7 @@
       "description": "Marketing Coordinator"
     },
     {
+      "id": "7",
       "username": "user7",
       "firstName": "Sarah",
       "lastName": "Lee",
@@ -87,6 +126,7 @@
       "description": "Senior Accountant"
     },
     {
+      "id": "8",
       "username": "user8",
       "firstName": "David",
       "lastName": "Chen",
@@ -98,6 +138,7 @@
       "description": "Sales Representative"
     },
     {
+      "id": "9",
       "username": "user9",
       "firstName": "Emily",
       "lastName": "Garcia",
@@ -109,6 +150,7 @@
       "description": "Senior Software Engineer"
     },
     {
+      "id": "10",
       "username": "user10",
       "firstName": "Michael",
       "lastName": "Wang",
@@ -120,6 +162,7 @@
       "description": "Marketing Manager"
     },
     {
+      "id": "11",
       "username": "user11",
       "firstName": "Sophia",
       "lastName": "Lopez",
@@ -131,6 +174,7 @@
       "description": "Junior Accountant"
     },
     {
+      "id": "12",
       "username": "user12",
       "firstName": "Daniel",
       "lastName": "Martinez",
@@ -140,6 +184,47 @@
       "status": "active",
       "group": "sales",
       "description": "Sales Manager"
+    },
+    {
+      "username": "test",
+      "firstName": "test",
+      "lastName": "test",
+      "birthDate": "2023-02-07T17:00:00.000Z",
+      "basicSalary": "1231231",
+      "status": "1231",
+      "group": "123",
+      "description": "1321",
+      "id": "oAEk2G_"
+    },
+    {
+      "username": "aaliff",
+      "firstName": "alief",
+      "lastName": "alief.alghifari",
+      "email": "aliefaliefa@gmail.com",
+      "birthDate": "2023-01-31T17:00:00.000Z",
+      "basicSalary": "test",
+      "status": "test",
+      "group": {
+        "name": "Sales",
+        "id": 1
+      },
+      "description": "test",
+      "id": "cwxhA3B"
+    },
+    {
+      "username": "user1",
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "johndoe@example.com",
+      "birthDate": "1990-01-01",
+      "basicSalary": 50000,
+      "status": "active",
+      "group": {
+        "name": "Sales",
+        "id": 1
+      },
+      "description": "Senior sales representative",
+      "id": "BeINQbG"
     }
   ]
 }

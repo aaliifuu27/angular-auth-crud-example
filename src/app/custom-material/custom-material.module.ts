@@ -13,6 +13,11 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatRadioModule} from '@angular/material/radio';
 
 export const MY_FORMATS = {
   parse: {
@@ -41,6 +46,11 @@ export const MY_FORMATS = {
     MatSortModule,
     MatFormFieldModule,
     MatPaginatorModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatAutocompleteModule,
+    MatSlideToggleModule,
+    MatRadioModule,
   ],
   exports: [
     CommonModule,
@@ -56,13 +66,20 @@ export const MY_FORMATS = {
     MatSortModule,
     MatFormFieldModule,
     MatPaginatorModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatAutocompleteModule,
+    MatSlideToggleModule,
+    MatRadioModule,
   ],
   providers: [
     {
       provide: MAT_DATE_FORMATS,
       useValue: MY_FORMATS
     },
-    { provide: LOCALE_ID, useValue: 'en-gb' }
+    { provide: LOCALE_ID, useValue: 'en-gb' },
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
   declarations: []
 })
