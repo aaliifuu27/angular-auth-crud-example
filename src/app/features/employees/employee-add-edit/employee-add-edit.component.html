@@ -73,7 +73,7 @@
             <mat-label>Group</mat-label>
             <input type="text" matInput formControlName="group" placeholder="Group" [matAutocomplete]="auto">
             <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
-              <mat-option *ngFor="let option of groupOptions | async" [value]="option">
+              <mat-option *ngFor="let option of groupOptions | async" [value]="option.name">
                 {{option.name}}
               </mat-option>
             </mat-autocomplete>

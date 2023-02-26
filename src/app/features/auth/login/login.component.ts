@@ -43,7 +43,6 @@ export class LoginComponent implements OnInit {
 
     this.loading = true;
     this.authService.login().subscribe(res => {
-      console.log(res)
       const user = res.find((u: any) => {
         return u.email === email && u.password === password
       });

@@ -1,0 +1,62 @@
+<h1 mat-dialog-title>{{ data.type }} Employee</h1>
+<div mat-dialog-content>
+  <form class="form">
+    <p>
+      <mat-form-field class="full-width">
+        <mat-label>Name</mat-label>
+        <input matInput disabled value="{{ data.employee.firstName }} {{ data.employee.lastName }}">
+      </mat-form-field>
+    </p>
+    <p>
+
+      <mat-form-field class="full-width">
+        <mat-label>Username</mat-label>
+        <input matInput disabled [value]="data.employee.username">
+      </mat-form-field>
+    </p>
+    <p>
+
+      <mat-form-field class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput disabled [value]="data.employee.email">
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field class="full-width">
+        <mat-label>Birth Date</mat-label>
+        <input matInput disabled [value]="data.employee.birthDate">
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field class="full-width">
+        <mat-label>Basic Salary</mat-label>
+        <input matInput disabled [value]="data.employee.basicSalary | currency:'Rp ':'symbol':'3.0'">
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field class="full-width">
+        <mat-label>Group</mat-label>
+        <input matInput disabled [value]="data.employee.group">
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field class="full-width">
+        <mat-label>Status</mat-label>
+        <input matInput disabled [value]="data.employee.status">
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field class="full-width">
+        <mat-label>Description</mat-label>
+        <input matInput disabled [value]="data.employee.description">
+      </mat-form-field>
+    </p>
+  </form>
+</div>
+<div mat-dialog-content>
+  {{ data.type === 'Delete' ? 'Would you like to delete data?' : "" }}
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">{{ data.type === "Detail" ? "Close" : "No" }}</button>
+  <button *ngIf="data.type==='Delete'" mat-button [mat-dialog-close]="data" cdkFocusInitial>Yes</button>
+</div>

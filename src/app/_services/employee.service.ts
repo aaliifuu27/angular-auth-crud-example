@@ -28,9 +28,13 @@ export class EmployeeService {
 
   getById(id: string) {
     return this.http.get<Employees>(`${employeesUrl}/${id}`);
-   }
-    
-   update(payload:Employees, id: string){
-    return this.http.put(`${employeesUrl}/${id}`,payload);
-   }
+  }
+
+  update(payload: Employees, id: string) {
+    return this.http.put(`${employeesUrl}/${id}`, payload);
+  }
+
+  delete(id: string) {
+    return this.http.delete<Employees>(`${employeesUrl}/${id}`);
+  }
 }

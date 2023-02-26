@@ -18,6 +18,7 @@ import {MatNativeDateModule} from '@angular/material/core';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatDialogModule} from '@angular/material/dialog';
 
 export const MY_FORMATS = {
   parse: {
@@ -51,6 +52,7 @@ export const MY_FORMATS = {
     MatAutocompleteModule,
     MatSlideToggleModule,
     MatRadioModule,
+    MatDialogModule
   ],
   exports: [
     CommonModule,
@@ -71,6 +73,7 @@ export const MY_FORMATS = {
     MatAutocompleteModule,
     MatSlideToggleModule,
     MatRadioModule,
+    MatDialogModule
   ],
   providers: [
     {

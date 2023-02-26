@@ -72,7 +72,6 @@ export class EmployeeAddEditComponent implements OnInit {
     
     if (this.isAddMode) {
       this.employeeService.create(payload).subscribe(res => {
-        console.log(res)
         this.notificationService.openSnackBar('Data saved')
         this.router.navigate(['/employees']);
       }, err => {
@@ -81,7 +80,6 @@ export class EmployeeAddEditComponent implements OnInit {
       })
     } else {
       this.employeeService.update(payload, this.id).subscribe(res => {
-        console.log(res)
         this.notificationService.openSnackBar('Data updated')
         this.router.navigate(['/employees']);
       }, err => {

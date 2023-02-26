@@ -10,61 +10,37 @@
   ],
   "groups": [
     {
-      "name": "Sales",
+      "name": "Sales"
     },
     {
-      "name": "Marketing",
+      "name": "Marketing"
     },
     {
-      "name": "Finance",
+      "name": "Finance"
     },
     {
-      "name": "Engineering",
+      "name": "Engineering"
     },
     {
-      "name": "Human Resources",
+      "name": "Human Resources"
     },
     {
-      "name": "Research and Development",
+      "name": "Research and Development"
     },
     {
-      "name": "Operations",
+      "name": "Operations"
     },
     {
-      "name": "Customer Support",
+      "name": "Customer Support"
     },
     {
-      "name": "Product Management",
+      "name": "Product Management"
     },
     {
-      "name": "Information Technology",
+      "name": "Information Technology"
     }
   ],
   "employees": [
-    {
-      "id": "1",
-      "username": "user1",
-      "firstName": "John",
-      "lastName": "Doe",
-      "email": "johndoe@example.com",
-      "birthDate": "1990-01-01",
-      "basicSalary": 50000,
-      "status": "active",
-      "group": "sales",
-      "description": "Senior sales representative"
-    },
-    {
-      "id": "2",
-      "username": "user2",
-      "firstName": "Jane",
-      "lastName": "Smith",
-      "email": "janesmith@example.com",
-      "birthDate": "1995-02-14",
-      "basicSalary": 45000,
-      "status": "active",
-      "group": "marketing",
-      "description": "Marketing manager"
-    },
     {
       "id": "3",
       "username": "user3",
@@ -88,18 +64,6 @@
       "status": "active",
       "group": "human resources",
       "description": "HR manager"
-    },
-    {
-      "id": "5",
-      "username": "user5",
-      "firstName": "Alice",
-      "lastName": "Smith",
-      "email": "alice.smith@example.com",
-      "birthDate": "1995-05-01",
-      "basicSalary": 60000,
-      "status": "active",
-      "group": "sales",
-      "description": "Senior Sales Manager"
     },
     {
       "id": "6",
@@ -186,32 +150,6 @@
       "description": "Sales Manager"
     },
     {
-      "username": "test",
-      "firstName": "test",
-      "lastName": "test",
-      "birthDate": "2023-02-07T17:00:00.000Z",
-      "basicSalary": "1231231",
-      "status": "1231",
-      "group": "123",
-      "description": "1321",
-      "id": "oAEk2G_"
-    },
-    {
-      "username": "aaliff",
-      "firstName": "alief",
-      "lastName": "alief.alghifari",
-      "email": "aliefaliefa@gmail.com",
-      "birthDate": "2023-01-31T17:00:00.000Z",
-      "basicSalary": "test",
-      "status": "test",
-      "group": {
-        "name": "Sales",
-        "id": 1
-      },
-      "description": "test",
-      "id": "cwxhA3B"
-    },
-    {
       "username": "user1",
       "firstName": "John",
       "lastName": "Doe",
@@ -219,12 +157,21 @@
       "birthDate": "1990-01-01",
       "basicSalary": 50000,
       "status": "active",
-      "group": {
-        "name": "Sales",
-        "id": 1
-      },
+      "group": "Sales",
       "description": "Senior sales representative",
       "id": "BeINQbG"
+    },
+    {
+      "username": "asdf",
+      "firstName": "adsf",
+      "lastName": "asdf",
+      "email": "asdf@adsfa.com",
+      "birthDate": "2023-02-13T17:00:00.000Z",
+      "basicSalary": 212312,
+      "status": "active",
+      "group": "Engineering",
+      "description": "12",
+      "id": "71XSd_L"
     }
   ]
 }
