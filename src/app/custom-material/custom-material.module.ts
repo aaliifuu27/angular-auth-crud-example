@@ -7,6 +7,12 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MAT_DATE_FORMATS } from '@angular/material/core';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 export const MY_FORMATS = {
   parse: {
@@ -28,7 +34,13 @@ export const MY_FORMATS = {
     MatButtonModule,
     MatProgressBarModule,
     MatProgressSpinnerModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatTableModule,
+    MatSortModule,
+    MatFormFieldModule,
+    MatPaginatorModule,
   ],
   exports: [
     CommonModule,
@@ -37,7 +49,13 @@ export const MY_FORMATS = {
     MatButtonModule,
     MatProgressBarModule,
     MatProgressSpinnerModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatTableModule,
+    MatSortModule,
+    MatFormFieldModule,
+    MatPaginatorModule,
   ],
   providers: [
     {

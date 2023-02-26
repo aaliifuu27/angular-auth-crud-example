@@ -1,3 +1,13 @@
 <div class="layout">
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span>Example</span>
+      <span class="example-spacer"></span>
+      <button *ngIf="user" mat-icon-button class="example-icon" (click)="logout()"
+        aria-label="Example icon-button with menu icon">
+        <mat-icon>logout</mat-icon>
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
   <router-outlet></router-outlet>
 </div>

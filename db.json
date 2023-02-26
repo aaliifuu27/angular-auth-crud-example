@@ -7,5 +7,139 @@
       "password": "qwerty123",
       "id": 1
     }
+  ],
+  "employees": [
+    {
+      "username": "user1",
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "johndoe@example.com",
+      "birthDate": "1990-01-01",
+      "basicSalary": 50000,
+      "status": "active",
+      "group": "sales",
+      "description": "Senior sales representative"
+    },
+    {
+      "username": "user2",
+      "firstName": "Jane",
+      "lastName": "Smith",
+      "email": "janesmith@example.com",
+      "birthDate": "1995-02-14",
+      "basicSalary": 45000,
+      "status": "active",
+      "group": "marketing",
+      "description": "Marketing manager"
+    },
+    {
+      "username": "user3",
+      "firstName": "David",
+      "lastName": "Johnson",
+      "email": "davidjohnson@example.com",
+      "birthDate": "1985-03-21",
+      "basicSalary": 60000,
+      "status": "inactive",
+      "group": "engineering",
+      "description": "Software engineer"
+    },
+    {
+      "username": "user4",
+      "firstName": "Emily",
+      "lastName": "Wilson",
+      "email": "emilywilson@example.com",
+      "birthDate": "1993-04-03",
+      "basicSalary": 55000,
+      "status": "active",
+      "group": "human resources",
+      "description": "HR manager"
+    },
+    {
+      "username": "user5",
+      "firstName": "Alice",
+      "lastName": "Smith",
+      "email": "alice.smith@example.com",
+      "birthDate": "1995-05-01",
+      "basicSalary": 60000,
+      "status": "active",
+      "group": "sales",
+      "description": "Senior Sales Manager"
+    },
+    {
+      "username": "user6",
+      "firstName": "Bob",
+      "lastName": "Johnson",
+      "email": "bob.johnson@example.com",
+      "birthDate": "1988-11-21",
+      "basicSalary": 55000,
+      "status": "active",
+      "group": "marketing",
+      "description": "Marketing Coordinator"
+    },
+    {
+      "username": "user7",
+      "firstName": "Sarah",
+      "lastName": "Lee",
+      "email": "sarah.lee@example.com",
+      "birthDate": "1993-08-14",
+      "basicSalary": 52000,
+      "status": "active",
+      "group": "finance",
+      "description": "Senior Accountant"
+    },
+    {
+      "username": "user8",
+      "firstName": "David",
+      "lastName": "Chen",
+      "email": "david.chen@example.com",
+      "birthDate": "1991-02-28",
+      "basicSalary": 58000,
+      "status": "active",
+      "group": "sales",
+      "description": "Sales Representative"
+    },
+    {
+      "username": "user9",
+      "firstName": "Emily",
+      "lastName": "Garcia",
+      "email": "emily.garcia@example.com",
+      "birthDate": "1987-06-10",
+      "basicSalary": 65000,
+      "status": "active",
+      "group": "engineering",
+      "description": "Senior Software Engineer"
+    },
+    {
+      "username": "user10",
+      "firstName": "Michael",
+      "lastName": "Wang",
+      "email": "michael.wang@example.com",
+      "birthDate": "1990-01-05",
+      "basicSalary": 60000,
+      "status": "active",
+      "group": "marketing",
+      "description": "Marketing Manager"
+    },
+    {
+      "username": "user11",
+      "firstName": "Sophia",
+      "lastName": "Lopez",
+      "email": "sophia.lopez@example.com",
+      "birthDate": "1995-09-22",
+      "basicSalary": 54000,
+      "status": "active",
+      "group": "finance",
+      "description": "Junior Accountant"
+    },
+    {
+      "username": "user12",
+      "firstName": "Daniel",
+      "lastName": "Martinez",
+      "email": "daniel.martinez@example.com",
+      "birthDate": "1989-04-18",
+      "basicSalary": 62000,
+      "status": "active",
+      "group": "sales",
+      "description": "Sales Manager"
+    }
   ]
 }
