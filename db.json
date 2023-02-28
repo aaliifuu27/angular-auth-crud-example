@@ -9,49 +9,29 @@
     }
   ],
   "groups": [
-    {
-      "name": "Sales"
-    },
-    {
-      "name": "Marketing"
-    },
-    {
-      "name": "Finance"
-    },
-    {
-      "name": "Engineering"
-    },
-    {
-      "name": "Human Resources"
-    },
-    {
-      "name": "Research and Development"
-    },
-    {
-      "name": "Operations"
-    },
-    {
-      "name": "Customer Support"
-    },
-    {
-      "name": "Product Management"
-    },
-    {
-      "name": "Information Technology"
-    }
+    "Sales",
+    "Marketing",
+    "Finance",
+    "Engineering",
+    "Human Resources",
+    "Research and Development",
+    "Operations",
+    "Customer Support",
+    "Product Management",
+    "Information Technology"
   ],
   "employees": [
     {
-      "id": "3",
       "username": "user3",
       "firstName": "David",
       "lastName": "Johnson",
       "email": "davidjohnson@example.com",
       "birthDate": "1985-03-21",
       "basicSalary": 60000,
-      "status": "inactive",
+      "status": "active",
       "group": "engineering",
-      "description": "Software engineer"
+      "description": "Software engineer",
+      "id": "3"
     },
     {
       "id": "4",
@@ -66,7 +46,6 @@
       "description": "HR manager"
     },
     {
-      "id": "6",
       "username": "user6",
       "firstName": "Bob",
       "lastName": "Johnson",
@@ -74,8 +53,9 @@
       "birthDate": "1988-11-21",
       "basicSalary": 55000,
       "status": "active",
-      "group": "marketing",
-      "description": "Marketing Coordinator"
+      "group": "Marketing",
+      "description": "Marketing Coordinator",
+      "id": "6"
     },
     {
       "id": "7",
@@ -172,6 +152,32 @@
       "group": "Engineering",
       "description": "12",
       "id": "71XSd_L"
+    },
+    {
+      "username": "aaliifuu",
+      "firstName": "Alief",
+      "lastName": "Alghifari",
+      "email": "alief.alghifari.real@gmail.com",
+      "birthDate": "1995-07-26T17:00:00.000Z",
+      "basicSalary": 9000000,
+      "status": "active",
+      "group": {
+        "name": "Sales"
+      },
+      "description": "test",
+      "id": "z_SaBur"
+    },
+    {
+      "username": "tes",
+      "firstName": "test",
+      "lastName": "test",
+      "email": "tes@gmail.com",
+      "birthDate": "2023-02-21T17:00:00.000Z",
+      "basicSalary": 200000,
+      "status": "active",
+      "group": "Engineering",
+      "description": "asdf",
+      "id": "MZALQx8"
     }
   ]
 }

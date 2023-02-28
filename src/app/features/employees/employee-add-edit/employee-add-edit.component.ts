@@ -2,11 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { UntypedFormControl, Validators, UntypedFormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Groups } from 'src/app/_models/groups';
 import { EmployeeService } from 'src/app/_services/employee.service';
 import { NotificationService } from 'src/app/_services/notification.service';
 
-import {map, startWith} from 'rxjs/operators';
+import { map, startWith } from 'rxjs/operators';
 import { Employees } from 'src/app/_models/employees';
 @Component({
   selector: 'app-employee-add-edit',
@@ -17,8 +16,8 @@ export class EmployeeAddEditComponent implements OnInit {
   employeeForm!: UntypedFormGroup;
   id!: string;
   isAddMode!: boolean;
-  groups!: Groups[];
-  groupOptions!: Observable<Groups[]>;
+  groups!: string[];
+  groupOptions!: Observable<string[]>;
 
   loading = false;
   submitted = false;
@@ -36,7 +35,7 @@ export class EmployeeAddEditComponent implements OnInit {
     this.id = this.route.snapshot.params['id'];
     this.isAddMode = !this.id;
 
-    if(!this.isAddMode) {
+    if (!this.isAddMode) {
       this.getEmployee(this.id);
     }
     this.getGroups();
@@ -59,17 +58,17 @@ export class EmployeeAddEditComponent implements OnInit {
 
   store() {
     const payload: Employees = {
-      username:  this.employeeForm.get('username')?.value,
-      firstName:  this.employeeForm.get('firstName')?.value,
-      lastName:  this.employeeForm.get('lastName')?.value,
+      username: this.employeeForm.get('username')?.value,
+      firstName: this.employeeForm.get('firstName')?.value,
+      lastName: this.employeeForm.get('lastName')?.value,
       email: this.employeeForm.get('email')?.value,
-      birthDate:  this.employeeForm.get('birthDate')?.value,
-      basicSalary:  this.employeeForm.get('basicSalary')?.value,
-      status:  this.employeeForm.get('status')?.value,
-      group:  this.employeeForm.get('group')?.value,
-      description:  this.employeeForm.get('description')?.value
+      birthDate: this.employeeForm.get('birthDate')?.value,
+      basicSalary: this.employeeForm.get('basicSalary')?.value,
+      status: this.employeeForm.get('status')?.value,
+      group: this.employeeForm.get('group')?.value,
+      description: this.employeeForm.get('description')?.value
     }
-    
+
     if (this.isAddMode) {
       this.employeeService.create(payload).subscribe(res => {
         this.notificationService.openSnackBar('Data saved')
@@ -95,10 +94,7 @@ export class EmployeeAddEditComponent implements OnInit {
       this.groups = res;
       this.groupOptions = this.employeeForm.valueChanges.pipe(
         startWith(''),
-        map(value => {
-          const name = typeof value === 'string' ? value : value?.name;
-          return name ? this._filter(name as string) : this.groups.slice();
-        }),
+        map(value => this._filter(value.group || '')),
       );
     }, err => {
       console.log(err);
@@ -115,18 +111,10 @@ export class EmployeeAddEditComponent implements OnInit {
     })
   }
 
-  displayFn(group: Groups): string {
-    return group && group.name ? group.name : '';
-  }
+  private _filter(value: string): string[] {
+    const filterValue = value ? value.toLowerCase() : "";
 
-  private _filter(name: string): Groups[] {
-    const filterValue = name.toLowerCase();
-
-    return this.groups.filter(option => option.name.toLowerCase().includes(filterValue));
-  }
-
-  reset() {
-
+    return this.groups.filter(option => option ? option.toLowerCase().includes(filterValue) : "");
   }
 
   back() {

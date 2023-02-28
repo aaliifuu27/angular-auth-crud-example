@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Employees } from '../_models/employees';
-import { Groups } from '../_models/groups';
 
 const employeesUrl = "http://localhost:3000/employees";
 const groupsUrl = "http://localhost:3000/groups";
@@ -19,7 +18,7 @@ export class EmployeeService {
   }
 
   getGroups() {
-    return this.http.get<Groups[]>(groupsUrl);
+    return this.http.get<string[]>(groupsUrl);
   }
 
   create(payload: Employees) {

@@ -6,7 +6,7 @@ import { EmployeeService } from 'src/app/_services/employee.service';
 import { NotificationService } from 'src/app/_services/notification.service';
 import { Router } from '@angular/router';
 import { MatSort } from '@angular/material/sort';
-import { MatPaginator } from '@angular/material/paginator';
+import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatDialog } from '@angular/material/dialog';
 import { EmployeeModal } from '../modal/employee-modal.component';
 
@@ -19,6 +19,9 @@ export class EmployeeListComponent implements OnInit, AfterViewInit {
   displayedColumns: string[] = ['name', 'email', 'status', 'actions'];
   dataSource = new MatTableDataSource<Employees>();
 
+  filterKeyword!: string;
+  pageState!: PageEvent;
+
   @ViewChild(MatSort) sort!: MatSort;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
@@ -29,7 +32,9 @@ export class EmployeeListComponent implements OnInit, AfterViewInit {
     private employeeService: EmployeeService,
     private notificationService: NotificationService
   ) {
-
+    this.filterKeyword = localStorage.getItem('filterPageEmployeList')! || "";
+    this.pageState = JSON.parse(localStorage.getItem('pageStateEmployeeList')!) || this.pageState;
+    this.dataSource.data = JSON.parse(localStorage.getItem('employeeList')!) || this.dataSource.data;
   }
 
   ngOnInit() {
@@ -42,6 +47,10 @@ export class EmployeeListComponent implements OnInit, AfterViewInit {
     this.dataSource.paginator = this.paginator;
   }
 
+  updateStorageList(data: Employees[]) {
+    localStorage.setItem('employeeList', JSON.stringify(data));
+  }
+
   add() {
     this.router.navigate(['/employees/add']);
   }
@@ -50,13 +59,17 @@ export class EmployeeListComponent implements OnInit, AfterViewInit {
     this.router.navigate(['/employees/edit/', id]);
   }
 
-  filter(event: any) {
-    this.dataSource.filter = event.target.value.trim().toLocaleLowerCase();
+  filter() {
+    localStorage.setItem('filterPageEmployeList', this.filterKeyword);
+    this.getEmployees();
   }
 
   getEmployees() {
     this.employeeService.get().subscribe(res => {
-      this.dataSource.data = res.length > 0 ? res as Employees[] : [];
+      const data = res.length > 0 ? res as Employees[] : [];
+      this.updateStorageList(data);
+      this.dataSource.data = data;
+      this.dataSource.filter = this.filterKeyword.trim().toLocaleLowerCase();
     }, err => {
       console.log(err);
       this.notificationService.openSnackBar('something went wrong')
@@ -95,6 +108,11 @@ export class EmployeeListComponent implements OnInit, AfterViewInit {
         this.deleteEmployee(result.employee.id)
       }
     });
+  }
+
+  changePage(event: PageEvent) {
+    this.pageState = event;
+    localStorage.setItem('pageStateEmployeeList', JSON.stringify(this.pageState))
   }
 
   show(id: string) {

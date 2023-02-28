@@ -72,9 +72,9 @@
           <mat-form-field appearance="outline" class="full-width">
             <mat-label>Group</mat-label>
             <input type="text" matInput formControlName="group" placeholder="Group" [matAutocomplete]="auto">
-            <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
-              <mat-option *ngFor="let option of groupOptions | async" [value]="option.name">
-                {{option.name}}
+            <mat-autocomplete #auto="matAutocomplete">
+              <mat-option *ngFor="let option of groupOptions | async" [value]="option">
+                {{option}}
               </mat-option>
             </mat-autocomplete>
 
@@ -83,7 +83,7 @@
               <strong>required</strong>
             </mat-error>
           </mat-form-field>
-          
+
 
           <mat-radio-group formControlName="status">
             <mat-label>Status</mat-label>
@@ -94,7 +94,7 @@
               Inactive
             </mat-radio-button>
           </mat-radio-group>
-          
+
           <mat-form-field appearance="outline" class="full-width">
             <mat-label>Description</mat-label>
             <input id="descriptionInput" matInput placeholder="Description" formControlName="description" type="text"
